@@ -1,7 +1,7 @@
 package com.shubham.daggerpractice.registerUser
 
-class registerUser (addUserInRepository: addUserInRepository
-                    , sendNotification: sendNotification){
+class registerUser (val addUserInRepository: addUserInRepository
+                    ,val sendNotification: sendNotification){
 
     fun addNewUser(email: String, password:String){
         addUserInRepository.addUserInSqlDatabase(email,password)
