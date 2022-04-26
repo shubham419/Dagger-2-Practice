@@ -1,10 +1,11 @@
 package com.shubham.daggerpractice.registerUser
 
-class registerUser {
+class registerUser(addUserInRepository: addUserInRepository
+                   , sendNotification: sendNotification) {
 
-    fun addNewUser(addUserInRepository: addUserInRepository , sendNotification: sendNotification){
-        addUserInRepository.addUserInSqlDatabase("abc.@xyz.com","123456")
-        sendNotification.sendEmail("abc@xyz.com", "shu@dream.big" , "Welcome")
+    fun addNewUser(email:String, password: String){
+        addUserInRepository.addUserInSqlDatabase(email,password)
+        sendNotification.sendEmail(email, "shu@dream.big" , "Welcome")
     }
 
 }

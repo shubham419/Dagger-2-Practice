@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
 
         val addUserInRepository  = com.shubham.daggerpractice.registerUser.addUserInRepository()
         val sendNotification = com.shubham.daggerpractice.registerUser.sendNotification()
-        val registerUser = registerUser()
+        val registerUser = registerUser(addUserInRepository, sendNotification)
 
-        registerUser.addNewUser(addUserInRepository,sendNotification)
+        registerUser.addNewUser("abc@xyz.com","11111")
 
     }
 }
