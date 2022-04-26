@@ -2,6 +2,7 @@ package com.shubham.daggerpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.shubham.daggerpractice.dagger.DaggeruserRegistrationComponent
 import com.shubham.daggerpractice.registerUser.registerUser
 
 class MainActivity : AppCompatActivity() {
@@ -9,9 +10,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val addUserInRepository  = com.shubham.daggerpractice.registerUser.addUserInRepository()
-        val sendNotification = com.shubham.daggerpractice.registerUser.sendNotification()
-        val registerUser = registerUser(addUserInRepository, sendNotification)
+        val component =  DaggeruserRegistrationComponent.builder().build()
+        val registerUser =component.getUserRegister()
 
         registerUser.addNewUser("abc@xyz.com","11111")
 
