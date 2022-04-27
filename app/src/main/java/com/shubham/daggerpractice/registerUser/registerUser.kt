@@ -1,10 +1,12 @@
 package com.shubham.daggerpractice.registerUser
 
+import com.shubham.daggerpractice.dagger.messageQualifier
 import javax.inject.Inject
+import javax.inject.Named
 
 class registerUser@Inject constructor(
     val addUserInRepository: addUserInRepository
-    ,val sendNotification: sendNotification) {
+    ,@messageQualifier val sendNotification: sendNotification) {
 
 
 
