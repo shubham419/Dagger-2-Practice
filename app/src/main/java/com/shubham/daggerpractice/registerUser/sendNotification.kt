@@ -13,9 +13,9 @@ class sendEmail@Inject constructor() : sendNotification {
     }
 }
 
-public class sendMessage : sendNotification{
+public class sendMessage(val rety : Int) : sendNotification{
     override fun sendEmail(to: String, from: String, body: String) {
-        Log.d("xyz", "message sent.")
+        Log.d("xyz", "message sent : rety count :_ $rety")
     }
 
 }

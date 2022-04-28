@@ -8,12 +8,12 @@ import dagger.Provides
 import javax.inject.Named
 
 @Module
-class notificationServiceModule {
+class notificationServiceModule() {
 
     @messageQualifier
     @Provides
-     fun getMessageObject() : sendNotification{
-         return sendMessage()
+     fun getMessageObject(rety : Int) : sendNotification{
+         return sendMessage(rety)
      }
     @Named("email")
     @Provides
